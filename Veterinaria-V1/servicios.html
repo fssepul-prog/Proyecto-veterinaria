@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ESCRIBE AQUÍ una descripción de 1-2 líneas de esta página específica.">
+    <title>NOMBRE DE LA PÁGINA | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+
+
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+
+    <nav aria-label="Navegación principal">
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="contenido-principal">
+    <!-- Comienzo de la estructura de servicios-->
+
+    <header class="encabezado-pagina">
+        <p class="etiqueta">Catálogo de atención</p>
+        <h1>Servicios para el cuidado de tu mascota</h1>
+        <p>Estas son las categorías de atención más solicitadas en Veterinaria
+            San Marcos. Los precios son referenciales y pueden variar según el
+            tamaño y la condición de cada paciente.</p>
+    </header>
+
+    <section aria-labelledby="titulo-categorias">
+        <h2 id="titulo-categorias">Categorías principales</h2>
+        <div class="grilla-tarjetas">
+            <article class="tarjeta">
+                <img src="assets/img/consulta-general.jpg"
+                     alt="Cartel de consulta general junto a una ficha de historia clínica">
+                <h3>Consultas</h3>
+                <p>Consulta general, urgencia, control postoperatorio y segunda
+                    opinión médica.</p>
+                <a href="servicio-detalle-consulta.html">Ver consulta general</a>
+            </article>
+            <article class="tarjeta">
+                <img src="assets/img/vacunacion.jpg"
+                     alt="Cartel de vacunación junto a un collar y una dosis de vacuna">
+                <h3>Vacunación</h3>
+                <p>Vacunas antirrábica, sextuple canina, triple y bivalente
+                    felina, con refuerzo anual.</p>
+                <a href="servicio-detalle-vacunacion.html">Ver plan de vacunación</a>
+            </article>
+            <article class="tarjeta">
+                <img src="assets/img/desparasitacion.jpg"
+                     alt="Cartel de desparasitación junto a un antiparasitario y un collar">
+                <h3>Desparasitación</h3>
+                <p>Desparasitación interna según el peso del paciente y
+                    antiparasitario externo en pipeta.</p>
+                <a href="#tabla-precios">Ver precios de referencia</a>
+            </article>
+        </div>
+    </section>
+
+
+    <section aria-labelledby="titulo-precios">
+        <h2 id="titulo-precios">Precios de referencia</h2>
+        <div class="tabla-contenedor" tabindex="0"
+             aria-label="Tabla de precios desplazable horizontalmente">
+            <table id="tabla-precios">
+                <caption>Servicios más solicitados y su valor aproximado</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Duración aprox.</th>
+                    <th scope="col">Precio (CLP)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">SV001</th>
+                    <td>Consulta general</td>
+                    <td>Perro / Gato</td>
+                    <td>30 min</td>
+                    <td>$15.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">SV002</th>
+                    <td>Consulta de urgencia</td>
+                    <td>Perro / Gato</td>
+                    <td>30 min</td>
+                    <td>$25.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">VA001</th>
+                    <td>Vacuna antirrábica canina</td>
+                    <td>Perro</td>
+                    <td>10 min</td>
+                    <td>$12.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">VA003</th>
+                    <td>Vacuna bivalente felina</td>
+                    <td>Gato</td>
+                    <td>10 min</td>
+                    <td>$15.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">DE001</th>
+                    <td>Desparasitación interna (menos de 10 kg)</td>
+                    <td>Perro</td>
+                    <td>5 min</td>
+                    <td>$8.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">CI003</th>
+                    <td>Esterilización hembra felina</td>
+                    <td>Gata</td>
+                    <td>60 min</td>
+                    <td>$65.000</td>
+                </tr>
+                <tr>
+                    <th scope="row">OT001</th>
+                    <td>Corte de uñas</td>
+                    <td>Perro / Gato</td>
+                    <td>15 min</td>
+                    <td>$5.000</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><small>Catálogo completo disponible en recepción. Valores de
+            agosto de 2026, sujetos a evaluación clínica previa.</small></p>
+    </section>
+
+    <!-- inicio de apartado secundario-->
+    <aside class="aviso" aria-labelledby="titulo-aviso-servicios">
+        <h2 id="titulo-aviso-servicios">¿Ya sabes qué servicio necesitas?</h2>
+        <p>Completa el <a href="citas.html">formulario de solicitud de
+            hora</a> indicando el servicio elegido y te confirmaremos la fecha
+            disponible según la <a href="agenda.html">agenda semanal</a>.</p>
+    </aside>
+    <!-- termino de apartado secundario-->
+
+
+    <!-- Termino  de la estructura de servicios-->
+</main>
+
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos </small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

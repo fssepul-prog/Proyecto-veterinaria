@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ESCRIBE AQUÍ una descripción de 1-2 líneas de esta página específica.">
+    <title>NOMBRE DE LA PÁGINA | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <nav aria-label="Navegación principal">
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="contenido-principal">
+    <!-- Comienzo de la estructura de servicio de vacunacion-->
+
+
+    <article class="noticia-completa">
+        <header>
+            <p class="etiqueta">Vacunación · Prevención</p>
+            <h1>Plan de vacunación</h1>
+        </header>
+
+        <figure>
+            <img src="assets/img/vacunacion.jpg"
+                 alt="Ilustración de la aplicación de una vacuna a un gato">
+            <figcaption>Mantener el plan de vacunas al día previene enfermedades   <!-- texto del pie de imagen-->
+                graves y es obligatorio en algunos casos.</figcaption>
+        </figure>
+
+        <p>Ofrecemos las vacunas esenciales para perros y gatos, con
+            recordatorio de refuerzo anual para que ningún dueño o dueña
+            dependa únicamente de su memoria para saber cuándo corresponde la
+            próxima dosis.</p>
+
+        <h2>Vacunas disponibles</h2>
+        <div class="tabla-contenedor" tabindex="0"
+             aria-label="Tabla de vacunas desplazable horizontalmente">
+            <table>
+                <caption>Vacunas más solicitadas por especie</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Vacuna</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Precio (CLP)</th>
+                    <th scope="col">Observación</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">VA001</th>
+                    <td>Antirrábica canina</td>
+                    <td>Perro</td>
+                    <td>$12.000</td>
+                    <td>Obligatoria por ley</td>
+                </tr>
+                <tr>
+                    <th scope="row">VA002</th>
+                    <td>Sextuple canina</td>
+                    <td>Perro</td>
+                    <td>$18.000</td>
+                    <td>Refuerzo anual</td>
+                </tr>
+                <tr>
+                    <th scope="row">VA003</th>
+                    <td>Bivalente felina</td>
+                    <td>Gato</td>
+                    <td>$15.000</td>
+                    <td>Refuerzo anual</td>
+                </tr>
+                <tr>
+                    <th scope="row">VA005</th>
+                    <td>Bordetella canina</td>
+                    <td>Perro</td>
+                    <td>$14.000</td>
+                    <td>Tos de las perreras</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><a class="boton" href="citas.html">Solicitar hora de vacunación</a></p>
+        <p><a href="servicios.html">Volver al catálogo de servicios</a></p>
+    </article>
+
+</main>
+
+
+
+    <!-- Termino  de la estructura de servicio de vacunacion-->
+</main>
+
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

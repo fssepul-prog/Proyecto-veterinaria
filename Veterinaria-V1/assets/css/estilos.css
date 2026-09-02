@@ -1,0 +1,489 @@
+/* 1. Variables ------------------------------------------------ */
+:root {
+    --color-primario: #5f9c63;
+    --color-primario-oscuro: #2b4d2f;
+    --color-secundario: #a9d3a0;
+    --color-acento: #d9edd2;
+    --color-texto: #2b4d2f;
+    --color-texto-suave: #5f9c63;
+    --color-fondo: #f3f8f1;
+    --color-superficie: #ffffff;
+    --color-borde: #d9edd2;
+    --fuente-base: Arial, Helvetica, sans-serif;
+    --radio: 0.75rem;
+    --sombra: 0 0.5rem 1.25rem rgb(43 77 47 / 14%);
+    --ancho-contenido: 70rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Base y tipografía ----------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--color-texto);
+    background: var(--color-fondo);
+    font-family: var(--fuente-base);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    /* Se usa el verde más oscuro, para que el texto
+       de los enlaces mantenga buen contraste sobre fondos claros. */
+    color: var(--color-primario-oscuro);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    text-wrap: balance;
+    color: var(--color-primario-oscuro);
+}
+
+p {
+    color: var(--color-texto);
+}
+
+/* 3. Estructura -------------------------------------------------- */
+main {
+    width: 90%;
+    max-width: var(--ancho-contenido);
+    margin-inline: auto;
+    padding-block: 2rem 4rem;
+}
+
+section + section {
+    margin-top: 3rem;
+}
+
+.encabezado-pagina {
+    margin-bottom: 2rem;
+}
+
+/* 4. Navegación --------------------------------------------------- */
+.cabecera-sitio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+    color: #ffffff;
+    background: var(--color-primario-oscuro);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.marca img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 0.6rem 0.9rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+    background: var(--color-primario);
+}
+
+.pie-sitio {
+    padding: 2rem 5%;
+    color: #ffffff;
+    background: var(--color-primario-oscuro);
+}
+
+.pie-sitio a {
+    color: #ffffff;
+}
+
+.pie-sitio__grid {
+    display: block;
+}
+
+.pie-sitio__grid > div {
+    margin-bottom: 1.5rem;
+}
+
+.pie-sitio small {
+    color: var(--color-acento);
+}
+
+/* 5. Componentes -------------------------------------------------- */
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    color: var(--color-primario-oscuro);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.presentacion {
+    padding: 1.75rem;
+    background: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta,
+.mensaje-confirmacion,
+.formulario fieldset {
+    padding: 1.5rem;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta figcaption,
+.tarjeta h3 {
+    margin-top: 0.75rem;
+}
+
+.grilla-tarjetas {
+    display: block;
+}
+
+.grilla-tarjetas > .tarjeta {
+    margin-bottom: 1.5rem;
+}
+
+.boton,
+button {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1.1rem;
+    color: #ffffff;
+    background: var(--color-primario);
+    border: 0;
+    border-radius: 0.5rem;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover,
+button:hover {
+    background: var(--color-primario-oscuro);
+}
+
+.boton--secundario {
+    color: var(--color-primario-oscuro);
+    background: transparent;
+    border: 2px solid currentColor;
+}
+
+.boton--secundario:hover {
+    color: #ffffff;
+    background: var(--color-primario-oscuro);
+}
+
+.grupo-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.aviso {
+    padding: 1.5rem;
+    background: var(--color-acento);
+    border: 1px solid var(--color-borde);
+    border-left: 0.35rem solid var(--color-primario);
+    border-radius: var(--radio);
+}
+
+.ficha-dato {
+    padding: 1.25rem;
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+.ficha-dato strong {
+    display: block;
+    color: var(--color-primario-oscuro);
+}
+
+.lista-pasos {
+    padding-left: 1.2rem;
+}
+
+.lista-pasos li {
+    margin-bottom: 0.5rem;
+}
+
+/* 6. Tablas y formularios ------------------------------------------ */
+.tabla-contenedor {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-superficie);
+}
+
+caption,
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid var(--color-borde);
+}
+
+caption {
+    font-weight: bold;
+    color: var(--color-primario-oscuro);
+}
+
+thead {
+    color: #ffffff;
+    background: var(--color-primario-oscuro);
+}
+
+.formulario {
+    display: grid;
+    gap: 1rem;
+    max-width: 42rem;
+}
+
+.formulario fieldset {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.formulario legend {
+    padding: 0 0.4rem;
+    color: var(--color-primario-oscuro);
+    font-weight: 700;
+}
+
+.formulario label {
+    font-weight: 600;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 0.7rem;
+    color: inherit;
+    background: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.4rem;
+    font: inherit;
+}
+
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+    width: auto;
+}
+
+.formulario .campo-opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+.ayuda-campo {
+    color: var(--color-texto-suave);
+    font-size: 0.85rem;
+}
+
+.error-campo {
+    display: none;
+    color: #b3261e;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.formulario .campo--invalido .error-campo {
+    display: block;
+}
+
+.formulario .campo--invalido input,
+.formulario .campo--invalido select,
+.formulario .campo--invalido textarea {
+    border-color: #b3261e;
+    border-left-width: 0.3rem;
+}
+
+.resumen-envio {
+    padding: 1rem;
+    color: var(--color-primario-oscuro);
+    background: var(--color-acento);
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--radio);
+}
+
+.resumen-envio[hidden] {
+    display: none;
+}
+
+/* 7. Multimedia y utilidades ---------------------------------------- */
+video,
+iframe {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radio);
+}
+
+iframe {
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.salto-contenido {
+    position: absolute;
+    padding: 0.6rem 1rem;
+    color: #ffffff;
+    background: var(--color-primario-oscuro);
+    transform: translateY(-150%);
+    z-index: 10;
+}
+
+.salto-contenido:focus {
+    transform: translateY(0);
+}
+
+/* 8. Estados interactivos y accesibilidad --------------------------- */
+:focus-visible {
+    /* Se usa el verde más oscuro de la paleta, para que
+       el anillo de foco sea claramente visible sobre fondos claros. */
+    outline: 3px solid var(--color-primario-oscuro);
+    outline-offset: 3px;
+}
+
+.formulario input:required,
+.formulario select:required,
+.formulario textarea:required {
+    border-left: 0.3rem solid var(--color-primario);
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border-color: var(--color-primario);
+}
+
+/* 9. Adaptabilidad: mobile first, Flexbox, Grid y media queries(por revisar) ----- */
+
+/* Desde 48rem (~768px): tablet y escritorio pequeño */
+@media (min-width: 48rem) {
+    .cabecera-sitio {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grilla-tarjetas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .grilla-tarjetas > .tarjeta {
+        margin-bottom: 0;
+    }
+
+    .pie-sitio__grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .pie-sitio__grid > div {
+        margin-bottom: 0;
+    }
+
+    .presentacion {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .presentacion > div,
+    .presentacion > img {
+        flex: 1 1 20rem;
+        min-width: 0;
+    }
+
+    .grilla-datos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Desde 64rem (~1024px): escritorio amplio */
+@media (min-width: 64rem) {
+    .grilla-tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grilla-datos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
