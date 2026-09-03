@@ -16,13 +16,13 @@
         <img src="assets/img/logo.png" alt="">
         Veterinaria San Marcos
     </a>
-
-
-        <!-- menu desplegable -->
-
-
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
     <nav aria-label="Navegación principal">
-        <ul class="menu">
+        <ul class="menu" id="menu-principal">
             <li><a href="index.html" aria-current="page">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -110,6 +110,6 @@
     <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
 </footer>
 <script src="assets/js/app.js"></script>
-
+<script src="assets/js/menu.js"></script>
 </body>
 </html>

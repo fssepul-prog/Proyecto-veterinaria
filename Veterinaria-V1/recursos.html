@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recursos y video informativo sobre el cuidado responsable de mascotas, de Veterinaria San Marcos.">
+    <title>Recursos | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html" aria-current="page">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="contenido-principal">
+
+    <!-- Comienzo de la estructura de recursos (contenido multimedia)-->
+
+    <header class="encabezado-pagina">
+        <h1>Cuidado responsable</h1>
+        <p>recomendaciones para mantener a tu mascota sana y tener una tenencia responsable</p>
+    </header>
+
+    <!-- seccion para el anexo del vinculo para contenido multimedia y sus permisos -->
+    <!-- allow establece que permisos del videos estaran disponibles para la pagina-->
+    <section aria-labelledby="titulo-video">
+
+        <iframe src="https://www.youtube.com/embed/QW_E3n83m8g"
+                title="Video de presentación de Veterinaria San Marcos"
+                allow= "autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </section>
+
+
+    <!-- apartado con tips de recomendaciones en formato tarjeta-->
+    <section aria-labelledby="titulo-recomendaciones">
+        <h2 id="titulo-recomendaciones">Recomendaciones de cuidado</h2>
+        <div class="grilla-tarjetas">
+            <article class="tarjeta">
+                <h3>Vacunas al día</h3>
+                <p>Respeta el calendario de refuerzos anuales, especialmente la
+                    vacuna antirrábica, obligatoria por ley.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>Desparasitación periódica</h3>
+                <p>Aplica antiparasitarios internos y externos según el peso y la
+                    especie de tu mascota.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>Control de peso</h3>
+                <p>Un peso saludable reduce el riesgo de enfermedades articulares
+                    y cardíacas a largo plazo.</p>
+            </article>
+        </div>
+    </section>
+</main>
+<!-- fin de la estructura de recursos (contenido multimedia)-->
+
+
+
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+            <p><a href="ingreso.html">Acceso interno (equipo)</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>
