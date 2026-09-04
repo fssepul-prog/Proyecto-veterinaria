@@ -12,6 +12,11 @@ if (formularioCitas) {
             valueMissing: "Ingresa el nombre del dueño o dueña.",
             tooShort: "El nombre debe tener al menos 3 caracteres.",
         },
+        nombre_mascota: {
+            valueMissing: "Ingresa el nombre de tu mascota.",
+            tooShort: "El nombre debe tener al menos 2 caracteres.",
+            patternMismatch: "Solo se permiten letras y espacios, sin números ni símbolos.",
+        },
         correo: {
             valueMissing: "Ingresa un correo de contacto.",
             typeMismatch: "Ingresa un correo con formato válido, por ejemplo nombre@ejemplo.cl.",

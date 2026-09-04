@@ -77,7 +77,6 @@
                     espacios (ejemplo: 912345678).</p>
                 <p class="error-campo" id="error-telefono" role="alert"></p>
             </div>
-
         </fieldset>
         <!-- fin del apartado para los datos del propietario de la mascota-->
 
@@ -85,6 +84,20 @@
         <!-- inicio de los datos de la mascota-->
         <fieldset>
             <legend>Datos de la mascota y del servicio</legend>
+
+            <!-- pattern compara cada carácter escrito contra el conjunto permitido
+             (letras, tildes, ñ y espacios); si algo no calza, el campo queda
+             inválido de forma automática. -->
+
+            <div class="campo">
+                <label for="nombre_mascota">Nombre de tu mascota</label>
+                <input id="nombre_mascota" name="nombre_mascota" type="text" data-campo="nombre_mascota"
+                       minlength="2" maxlength="40" pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" required
+                       aria-describedby="ayuda-nombre_mascota error-nombre_mascota">
+                <p class="ayuda-campo" id="ayuda-nombre_mascota">Solo letras y espacios, sin números ni símbolos.</p>
+                <p class="error-campo" id="error-nombre_mascota" role="alert"></p>
+            </div>
+
 
             <div class="campo">
                 <label for="especie">Especie de tu mascota</label>
@@ -148,6 +161,7 @@
                 <p class="error-campo" id="error-motivo" role="alert"></p>
             </div>
         </fieldset>
+
         <!-- inicio de los datos de la mascota-->
 
         <!-- campo aceptar las condiciones de la solicitud por parte del usuario-->
