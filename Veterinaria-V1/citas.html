@@ -50,12 +50,14 @@
         <!-- inicio apartado para los datos del propietario de la mascota-->
         <fieldset>
             <legend>Datos de contacto</legend>
-
+            <!-- se añade filtro para el ingreso del nombre del cuidador, para que solo lea caracteres-->
             <div class="campo">
                 <label for="nombre">Nombre completo del cuidador</label>
                 <input id="nombre" name="nombre" type="text" data-campo="nombre"
-                       autocomplete="name" minlength="3" maxlength="80" required
-                       aria-describedby="error-nombre">
+                       autocomplete="name" minlength="3" maxlength="80"
+                       pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" required
+                       aria-describedby="ayuda-nombre error-nombre">
+                <p class="ayuda-campo" id="ayuda-nombre">Solo letras y espacios, sin números ni símbolos.</p>
                 <p class="error-campo" id="error-nombre" role="alert"></p>
             </div>
 
@@ -79,7 +81,6 @@
             </div>
         </fieldset>
         <!-- fin del apartado para los datos del propietario de la mascota-->
-
 
         <!-- inicio de los datos de la mascota-->
         <fieldset>
@@ -162,7 +163,7 @@
             </div>
         </fieldset>
 
-        <!-- inicio de los datos de la mascota-->
+        <!-- termino de los datos de la mascota-->
 
         <!-- campo aceptar las condiciones de la solicitud por parte del usuario-->
         <div class="campo">
@@ -177,7 +178,6 @@
         <!-- fin de la confirmacion-->
     </form>
     <!-- Termino  de la estructura de citas-->
-
 </main>
 
 <footer class="pie-sitio">
@@ -200,5 +200,6 @@
 </footer>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/menu.js"></script>
+<script src="assets/js/cita.js"></script>   <!--llamar al comportamiento del formulario de citas-->
 </body>
 </html>

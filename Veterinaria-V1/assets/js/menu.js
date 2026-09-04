@@ -4,6 +4,7 @@
 // responsabilidad: este solo abre y cierra la navegación en pantallas
 // pequeñas.
 
+
 const botonMenu = document.querySelector("#boton-menu");
 const menuPrincipal = document.querySelector("#menu-principal");
 

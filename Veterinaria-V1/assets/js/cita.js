@@ -1,16 +1,15 @@
 //formulario para agendar citas
-
-
 const formularioCitas = document.querySelector("#formulario-citas");
 
 if (formularioCitas) {
     const campos = formularioCitas.querySelectorAll("[data-campo]");
-
     // mensajes personalizados por campo y por tipo de error.
     const mensajes = {
+
         nombre: {
             valueMissing: "Ingresa el nombre del dueño o dueña.",
             tooShort: "El nombre debe tener al menos 3 caracteres.",
+            patternMismatch: "Solo se permiten letras y espacios, sin números ni símbolos.",
         },
         nombre_mascota: {
             valueMissing: "Ingresa el nombre de tu mascota.",
@@ -45,7 +44,6 @@ if (formularioCitas) {
             valueMissing: "Debes confirmar que los datos ingresados son de prueba.",
         },
     };
-
 
     function mensajePersonalizado(campo) {
         const nombreCampo = campo.dataset.campo;
@@ -95,9 +93,28 @@ if (formularioCitas) {
     }
 
     campos.forEach((campo) => {
-        // Revalida mientras la persona corrige, sin esperar a un nuevo envío.
-        campo.addEventListener("input", () => marcarEstado(campo));
+
+        // blur: la persona terminó de escribir en el campo (perdió el foco).
+        // Ahí se ejecuta la validación completa, igual que al enviar.
+        campo.addEventListener("blur", () => marcarEstado(campo));
+
+        // input: la persona está escribiendo. Solo se limpia el error
+        // anterior, para no "castigarla" mientras todavía está corrigiendo.
+        campo.addEventListener("input", () => {
+            const contenedor = campo.closest(".campo");
+            const elementoError = document.querySelector("#error-" + campo.dataset.campo);
+            if (contenedor) {
+                contenedor.classList.remove("campo--invalido");
+            }
+            if (elementoError) {
+                elementoError.textContent = "";
+            }
+        });
+
+        // change: para select, radio, checkbox y fecha, donde no aplica
+        // "escribir letra por letra" — el valor cambia de una vez.
         campo.addEventListener("change", () => marcarEstado(campo));
+
         campo.addEventListener("invalid", (evento) => {
             evento.preventDefault();
             marcarEstado(campo);
@@ -136,14 +153,10 @@ if (formularioCitas) {
         // hacia confirmacion.html.
     });
 
-
-
-
     // Contador de caracteres del motivo (mejora de experiencia, sin
     // reemplazar la validación de minlength/maxlength ya declarada en HTML).
     const motivo = document.querySelector("#motivo");
     const contadorMotivo = document.querySelector("#contador-motivo");
-
 
     if (motivo && contadorMotivo) {
         const maximo = Number(motivo.getAttribute("maxlength"));
