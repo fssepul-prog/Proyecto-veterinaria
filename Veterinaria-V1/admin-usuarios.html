@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de usuarios del sistema, Veterinaria San Marcos.">
+    <title>Usuarios | Panel de administrador</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+
+    <header class="cabecera-sitio">
+        <a class="marca" href="administrador.html">
+            <img src="assets/img/logo.png" alt="">
+            Veterinaria San Marcos
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul class="menu">        
+                <li><a href="administrador.html" aria-current="page">Administrador</a></li>
+                <li><a href="admin-citas.html">Citas</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="admin-servicios.html">Servicios</a></li>
+                <li><a href="admin-reportes.html">Reportes</a></li>
+                <li><a href="admin-historial.html">Historial</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+
+        <div>
+            <section class="encabezado-pagina" aria-labelledby="titulo-usuarios">
+                <p class="etiqueta">Rol administrador</p>
+                <h1 id="titulo-usuarios">Gestión de usuarios</h1>
+                <p>Crea, edita y desactiva las cuentas del sistema. Cada usuario tiene un rol
+                    asignado que determina qué puede ver y hacer dentro de la plataforma.</p>
+            </section>
+ 
+            <p id="mensaje-estado-usuarios" class="aviso" role="status" hidden></p>
+ 
+            <section aria-labelledby="titulo-tabla-usuarios">
+                <h2 id="titulo-tabla-usuarios">Usuarios del sistema</h2>
+                <div class="grupo-botones">
+                    <button type="button" id="boton-nuevo-usuario" class="boton">Nuevo usuario</button>
+                </div>
+                <div class="tabla-contenedor">
+                    <table id="tabla-usuarios">
+                        <caption>Usuarios registrados</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-usuario="1" data-estado="activo"
+                            data-nombre="Marcela Iturra" data-correo="marcela.iturra@veterinariasanmarcos.cl"
+                            data-telefono="912345671" data-rol="administrador">
+                            <td class="celda-nombre">Marcela Iturra</td>
+                            <td class="celda-correo">marcela.iturra@veterinariasanmarcos.cl</td>
+                            <td class="celda-rol">Administrador</td>
+                            <td class="celda-estado">Activo</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="editar" data-usuario="1">Editar</button>
+                                    <button type="button" class="accion-fila" data-accion="alternar-estado" data-usuario="1">Desactivar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-usuario="2" data-estado="activo"
+                            data-nombre="Pedro Salgado" data-correo="pedro.salgado@veterinariasanmarcos.cl"
+                            data-telefono="912345672" data-rol="recepcionista">
+                            <td class="celda-nombre">Pedro Salgado</td>
+                            <td class="celda-correo">pedro.salgado@veterinariasanmarcos.cl</td>
+                            <td class="celda-rol">Recepcionista / Operador</td>
+                            <td class="celda-estado">Activo</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="editar" data-usuario="2">Editar</button>
+                                    <button type="button" class="accion-fila" data-accion="alternar-estado" data-usuario="2">Desactivar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-usuario="3" data-estado="activo"
+                            data-nombre="Javiera Contreras" data-correo="javiera.contreras@gmail.com"
+                            data-telefono="912345673" data-rol="dueno">
+                            <td class="celda-nombre">Javiera Contreras</td>
+                            <td class="celda-correo">javiera.contreras@gmail.com</td>
+                            <td class="celda-rol">Dueño de mascota</td>
+                            <td class="celda-estado">Activo</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="editar" data-usuario="3">Editar</button>
+                                    <button type="button" class="accion-fila" data-accion="alternar-estado" data-usuario="3">Desactivar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-usuario="4" data-estado="inactivo"
+                            data-nombre="Rodrigo Neira" data-correo="rodrigo.neira@hotmail.com"
+                            data-telefono="912345674" data-rol="dueno">
+                            <td class="celda-nombre">Rodrigo Neira</td>
+                            <td class="celda-correo">rodrigo.neira@hotmail.com</td>
+                            <td class="celda-rol">Dueño de mascota</td>
+                            <td class="celda-estado">Inactivo</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="editar" data-usuario="4">Editar</button>
+                                    <button type="button" class="accion-fila" data-accion="alternar-estado" data-usuario="4">Activar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+ 
+            <section aria-labelledby="titulo-form-usuario">
+                <h2 id="titulo-form-usuario">Crear o editar usuario</h2>
+                <form class="formulario" id="formulario-usuario" novalidate>
+                    <input type="hidden" id="usuario-id-editar" name="usuario-id-editar">
+                    <fieldset>
+                        <legend>Datos del usuario</legend>
+ 
+                        <div class="campo">
+                            <label for="nombre-usuario">Nombre completo</label>
+                            <input type="text" id="nombre-usuario" name="nombre" data-campo="nombre"
+                                   minlength="3" autocomplete="name" required>
+                            <p class="error-campo" id="error-nombre" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="correo-usuario">Correo electrónico</label>
+                            <input type="email" id="correo-usuario" name="correo" data-campo="correo"
+                                   autocomplete="email" required>
+                            <p class="error-campo" id="error-correo" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="telefono-usuario">Teléfono de contacto</label>
+                            <input type="tel" id="telefono-usuario" name="telefono" data-campo="telefono"
+                                   pattern="[0-9]{9}" placeholder="912345678" autocomplete="tel" required>
+                            <p class="ayuda-campo">9 dígitos, sin espacios ni guiones.</p>
+                            <p class="error-campo" id="error-telefono" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="rol-usuario">Rol</label>
+                            <select id="rol-usuario" name="rol" data-campo="rol" required>
+                                <option value="">Selecciona un rol</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="recepcionista">Recepcionista / Operador</option>
+                                <option value="dueno">Dueño de mascota</option>
+                            </select>
+                            <p class="error-campo" id="error-rol" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label class="campo-opcion" for="estado-usuario">
+                                <input type="checkbox" id="estado-usuario" name="estado" checked>
+                                Usuario activo
+                            </label>
+                        </div>
+                    </fieldset>
+ 
+                    <div class="grupo-botones">
+                        <button type="submit" id="boton-guardar-usuario">Guardar usuario</button>
+                        <button type="button" id="boton-cancelar-usuario" class="boton boton--secundario">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</main>
+ 
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="administrador.html">Panel de administrador</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin-usuarios.js"></script>
+ 
+</body>
+</html>
