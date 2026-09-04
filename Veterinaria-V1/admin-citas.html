@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de todas las citas del sistema, Veterinaria San Marcos.">
+    <title>Citas | Panel de administrador</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+
+        <header class="cabecera-sitio">
+            <a class="marca" href="administrador.html">
+                <img src="assets/img/logo.png" alt="">
+                Veterinaria San Marcos
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul class="menu">        
+                    <li><a href="administrador.html" aria-current="page">Administrador</a></li>
+                    <li><a href="admin-citas.html">Citas</a></li>
+                    <li><a href="admin-usuarios.html">Usuarios</a></li>
+                    <li><a href="admin-servicios.html">Servicios</a></li>
+                    <li><a href="admin-reportes.html">Reportes</a></li>
+                    <li><a href="admin-historial.html">Historial</a></li>
+                </ul>
+            </nav>
+        </header>
+ 
+        <div>
+            <section class="encabezado-pagina" aria-labelledby="titulo-citas">
+                <p class="etiqueta">Rol administrador</p>
+                <h1 id="titulo-citas">Todas las citas</h1>
+                <p>Aquí ves y gestionas las citas de todos los clientes, no solo las tuyas.
+                    Confirma, cancela o reagenda cualquier hora del sistema.</p>
+            </section>
+ 
+            <p id="mensaje-estado" class="aviso" role="status" hidden></p>
+ 
+            <section aria-labelledby="titulo-filtro">
+                <h2 id="titulo-filtro">Filtrar citas</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="filtro-estado">Estado</label>
+                        <select id="filtro-estado" name="filtro-estado">
+                            <option value="todas">Todas</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="confirmada">Confirmada</option>
+                            <option value="cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+ 
+            <section aria-labelledby="titulo-tabla-citas">
+                <h2 id="titulo-tabla-citas">Listado de citas</h2>
+                <div class="tabla-contenedor">
+                    <table id="tabla-citas">
+                        <caption>Citas solicitadas</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col">Dueño</th>
+                            <th scope="col">Mascota</th>
+                            <th scope="col">Servicio</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-cita="1" data-estado="pendiente">
+                            <td>Javiera Contreras</td>
+                            <td>Toby (perro)</td>
+                            <td>Consulta general</td>
+                            <td class="celda-fecha">04-09-2026</td>
+                            <td class="celda-estado">Pendiente</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="confirmar" data-cita="1">Confirmar</button>
+                                    <button type="button" class="accion-fila" data-accion="reagendar" data-cita="1">Reagendar</button>
+                                    <button type="button" class="accion-fila" data-accion="cancelar" data-cita="1">Cancelar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-cita="2" data-estado="confirmada">
+                            <td>Rodrigo Neira</td>
+                            <td>Michi (gato)</td>
+                            <td>Vacunación</td>
+                            <td class="celda-fecha">05-09-2026</td>
+                            <td class="celda-estado">Confirmada</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="reagendar" data-cita="2">Reagendar</button>
+                                    <button type="button" class="accion-fila" data-accion="cancelar" data-cita="2">Cancelar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-cita="3" data-estado="pendiente">
+                            <td>Marcela Iturra</td>
+                            <td>Copito (conejo)</td>
+                            <td>Desparasitación</td>
+                            <td class="celda-fecha">06-09-2026</td>
+                            <td class="celda-estado">Pendiente</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="confirmar" data-cita="3">Confirmar</button>
+                                    <button type="button" class="accion-fila" data-accion="reagendar" data-cita="3">Reagendar</button>
+                                    <button type="button" class="accion-fila" data-accion="cancelar" data-cita="3">Cancelar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-cita="4" data-estado="cancelada">
+                            <td>Pedro Salgado</td>
+                            <td>Rocky (perro)</td>
+                            <td>Cirugía menor</td>
+                            <td class="celda-fecha">02-09-2026</td>
+                            <td class="celda-estado">Cancelada</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila" data-accion="reagendar" data-cita="4">Reagendar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+ 
+<dialog id="dialogo-reagendar" class="dialogo-admin" aria-labelledby="titulo-dialogo-reagendar">
+    <form class="formulario" id="formulario-reagendar" novalidate>
+        <h2 id="titulo-dialogo-reagendar">Reagendar cita</h2>
+        <input type="hidden" id="reagendar-cita-id" name="cita-id">
+ 
+        <div class="campo">
+            <label for="reagendar-fecha">Nueva fecha</label>
+            <input type="date" id="reagendar-fecha" name="fecha" data-campo="fecha" required>
+            <p class="error-campo" id="error-reagendar-fecha" role="alert"></p>
+        </div>
+ 
+        <div class="grupo-botones">
+            <button type="submit">Guardar nueva fecha</button>
+            <button type="button" id="boton-cancelar-reagendar" class="boton boton--secundario">Cancelar</button>
+        </div>
+    </form>
+</dialog>
+ 
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="administrador.html">Panel de administrador</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin-citas.js"></script>
+ 
+</body>
+</html>
