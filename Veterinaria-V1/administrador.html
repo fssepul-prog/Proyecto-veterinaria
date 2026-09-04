@@ -12,19 +12,158 @@
 
 <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
 
-/*-----header----- */
-<nav aria-label="Navegación principal">
-        <ul class="menu">
-            <li><a href="administrador.html" aria-current="page">Inicio</a></li>
-            <li><a href="admin-citas.html" aria-current="page">Citas</a></li>
-            <li><a href="admin-usuarios.html" aria-current="page">Usuarios</a></li>
-            <li><a href="admin-reportes.html" aria-current="page">Reportes</a></li>
-            <li><a href="admin-historial.html" aria-current="page">Historial</a></li>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="administrador.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <nav aria-label="Navegación principal">
+        <ul class="menu">        
+            <li><a href="administrador.html" aria-current="page">Administrador</a></li>
+            <li><a href="admin-citas.html">Citas</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="admin-servicios.html">Servicios</a></li>
+            <li><a href="admin-reportes.html">Reportes</a></li>
+            <li><a href="admin-historial.html">Historial</a></li>
         </ul>
     </nav>
 </header>
+ 
 
-/*-----cuerpo----- */
+<main id="contenido-principal">
+    <nav aria-label="Navegación del panel de administrador" class="grupo-botones">
+        <a class="boton" href="administrador.html" aria-current="page">Inicio</a>
+        <a class="boton boton--secundario" href="admin-usuarios.html">Usuarios</a>
+        <a class="boton boton--secundario" href="admin-citas.html">Citas</a>
+    </nav>
+
+    <section class="presentacion presentacion-admin" aria-labelledby="titulo-panel">
+    <div>
+        <p class="etiqueta">Rol administrador · Acceso total</p>
+        <h1 id="titulo-panel">Bienvenido/a, Ejemplo</h1>
+        <p>Desde este panel gestionas el sistema.</p>
+        <div class="grupo-botones">
+            <a class="boton" href="admin-usuarios.html">Gestionar usuarios</a>
+            <a class="boton boton--secundario" href="admin-citas.html">Ver todas las citas</a>
+        </div>
+    </div>
+    <img src="assets/img/Pet_shop.jpg" alt="" aria-hidden="true" class="img-admin">
+    </section>
+
+ 
+
+    <section aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen">Resumen general</h2>
+        <div class="grilla-datos">
+
+            <article class="ficha-dato">
+                <strong>Citas este mes</strong>
+                <p>128</p>
+
+            </article>
+            <article class="ficha-dato">
+                <strong>Usuarios activos</strong>
+                <p>14</p>
+
+            </article>
+            <article class="ficha-dato">
+                <strong>Pacientes registrados</strong>
+                <p>342</p>
+
+            </article>
+            <article class="ficha-dato">
+                <strong>Servicio más solicitado</strong>
+                <p>Consulta general</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Ingresos estimados</strong>
+                <p>$1.450.000</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Atenciones hoy</strong>
+                <p>8</p>
+            </article>
+        </div>
+    </section>
+ 
+
+    <section aria-labelledby="titulo-actividad">
+        <h2 id="titulo-actividad">Actividad reciente</h2>
+        <div class="tabla-contenedor">
+            <table>
+                <caption>Últimos movimientos en el sistema</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>02-09-2026</td>
+                    <td>Pedro Salgado</td>
+                    <td>Confirmó la cita de Javiera Contreras</td>
+                </tr>
+                <tr>
+                    <td>01-09-2026</td>
+                    <td>Marcela Iturra</td>
+                    <td>Creó el usuario Rodrigo Neira</td>
+                </tr>
+                <tr>
+                    <td>31-08-2026</td>
+                    <td>Pedro Salgado</td>
+                    <td>Reagendó la cita de Rocky (perro)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+ 
 
 
+    <section aria-labelledby="titulo-accesos">
+        <h2 id="titulo-accesos">Accesos rápidos</h2>
+        <div class="grilla-tarjetas">
+            <article class="tarjeta">
+                <h3>Usuarios</h3>
+                <p>Administre credenciales, asignación de roles y permisos de acceso al sistema</p>
+                <a href="admin-usuarios.html">Ir a usuarios</a>
+            </article>
+            <article class="tarjeta">
+                <h3>Citas</h3>
+                <p>Supervise la programación, estado y seguimiento de las atenciones solicitadas </p>
+                <a href="admin-citas.html">Ir a citas</a>
+            </article>
+        </div>
+    </section>
+</main>
+
+
+ 
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/admin.js"></script>
+ 
+</body>
+</html>
 
