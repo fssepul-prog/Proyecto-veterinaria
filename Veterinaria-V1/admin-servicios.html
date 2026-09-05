@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de usuarios del sistema, Veterinaria San Marcos.">
+    <title>Usuarios | Panel de administrador</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+
+    <header class="cabecera-sitio">
+        <a class="marca" href="administrador.html">
+            <img src="assets/img/logo.png" alt="">
+            Veterinaria San Marcos
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul class="menu">        
+                <li><a href="administrador.html" aria-current="page">Administrador</a></li>
+                <li><a href="admin-citas.html">Citas</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="admin-servicios.html">Servicios</a></li>
+                <li><a href="admin-reportes.html">Reportes</a></li>
+                <li><a href="admin-historial.html">Historial</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+ 
+        <div>
+            <section class="encabezado-pagina" aria-labelledby="titulo-servicios">
+                <p class="etiqueta">Rol administrador</p>
+                <h1 id="titulo-servicios">Catálogo de servicios</h1>
+                <p>Mantén actualizados los servicios, precios y duraciones que se muestran
+                    a los clientes, sin depender de una lista impresa.</p>
+            </section>
+ 
+            <section aria-labelledby="titulo-tabla-servicios">
+                <h2 id="titulo-tabla-servicios">Servicios disponibles</h2>
+                <div class="grupo-botones">
+                    <button type="button" class="boton">Nuevo servicio</button>
+                </div>
+                <div class="tabla-contenedor">
+                    <table>
+                        <caption>Catálogo de servicios</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col">Servicio</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Consulta general</td>
+                            <td>Consultas</td>
+                            <td>30 min</td>
+                            <td>$15.000</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila">Editar</button>
+                                    <button type="button" class="accion-fila">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Vacunación</td>
+                            <td>Prevención</td>
+                            <td>20 min</td>
+                            <td>$12.000</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila">Editar</button>
+                                    <button type="button" class="accion-fila">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Desparasitación</td>
+                            <td>Prevención</td>
+                            <td>15 min</td>
+                            <td>$8.000</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila">Editar</button>
+                                    <button type="button" class="accion-fila">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cirugía menor</td>
+                            <td>Procedimientos</td>
+                            <td>90 min</td>
+                            <td>$65.000</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila">Editar</button>
+                                    <button type="button" class="accion-fila">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Examen de laboratorio</td>
+                            <td>Diagnóstico</td>
+                            <td>40 min</td>
+                            <td>$22.000</td>
+                            <td>
+                                <div class="acciones-fila">
+                                    <button type="button" class="accion-fila">Editar</button>
+                                    <button type="button" class="accion-fila">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+ 
+            <section aria-labelledby="titulo-form-servicio">
+                <h2 id="titulo-form-servicio">Crear o editar servicio</h2>
+                <form class="formulario" novalidate>
+                    <fieldset>
+                        <legend>Datos del servicio</legend>
+ 
+                        <div class="campo">
+                            <label for="nombre-servicio">Nombre del servicio</label>
+                            <input type="text" id="nombre-servicio" name="nombre" minlength="3" required>
+                            <p class="error-campo" id="error-nombre-servicio" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="categoria-servicio">Categoría</label>
+                            <select id="categoria-servicio" name="categoria" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="consultas">Consultas</option>
+                                <option value="prevencion">Prevención</option>
+                                <option value="procedimientos">Procedimientos</option>
+                                <option value="diagnostico">Diagnóstico</option>
+                            </select>
+                            <p class="error-campo" id="error-categoria-servicio" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="duracion-servicio">Duración (minutos)</label>
+                            <input type="number" id="duracion-servicio" name="duracion" min="10" step="5" required>
+                            <p class="error-campo" id="error-duracion-servicio" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="precio-servicio">Precio (CLP)</label>
+                            <input type="number" id="precio-servicio" name="precio" min="0" step="500" required>
+                            <p class="error-campo" id="error-precio-servicio" role="alert"></p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="descripcion-servicio">Descripción breve</label>
+                            <textarea id="descripcion-servicio" name="descripcion" rows="3" maxlength="200"></textarea>
+                        </div>
+                    </fieldset>
+ 
+                    <div class="grupo-botones">
+                        <button type="submit">Guardar servicio</button>
+                        <button type="button" class="boton boton--secundario">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="administrador.html">Panel de administrador</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin-usuarios.js"></script>
+ 
+</body>
