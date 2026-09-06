@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuenta de dueño de mascota, Veterinaria San Marcos.">
+    <title>Mi cuenta | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- inico de cuenta de usuario -->
+<main id="contenido-principal">
+    <header class="encabezado-pagina">
+        <p class="etiqueta">bienvenido "usuario"</p>
+        <h1>Mi cuenta</h1>
+        <p>Revisa el historial clínico de tus mascotas y el estado de tus
+            solicitudes de hora.</p>
+    </header>
+
+    <section aria-labelledby="titulo-historial">
+        <h2 id="titulo-historial">Historial clínico</h2>
+        <p>Ejemplo de historial clínico de una mascota registrada (datos de
+            demostración, fijos en el código).</p>
+        <div class="tabla-contenedor">
+            <table id="tabla-historial">
+                <caption>Historial de Luna (gata)</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Diagnóstico</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Se completa desde mi-cuenta.js -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="titulo-mis-citas">
+
+        <!--Solo se muestran aquí las citas pedidas con el nombre de
+            demostración <strong>Cliente Demo</strong> (así se simula que cada
+            usuario ve únicamente sus propios datos, sin tener un login real). -->
+        <h2 id="titulo-mis-citas">Mis citas solicitadas</h2>
+
+        <div class="tabla-contenedor">
+            <table id="tabla-mis-citas">
+                <caption>Citas solicitadas por "nombre de usuario"</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Mascota</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Fecha solicitada</th>
+                    <th scope="col">Estado</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpo-mis-citas">
+                <!-- Se completa desde mi-cuenta.js -->
+                </tbody>
+            </table>
+        </div>
+        <p id="mensaje-sin-citas" hidden>Aún no tienes citas solicitadas con
+            el nombre "Cliente Demo". Prueba <a href="citas.html">agendando una
+                hora</a> usando ese nombre.</p>
+    </section>
+</main>
+
+<!-- termino de cuenta de usuario -->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/mi-cuenta.js"></script>
+</body>
+</html>

@@ -148,9 +148,32 @@ if (formularioCitas) {
             if (primerCampoInvalido) {
                 primerCampoInvalido.focus();
             }
+            return;
         }
-        // Si el formulario es válido, se envía de forma normal (method="get")
-        // hacia confirmacion.html.
+
+        // El formulario va a llevar igual a confirmacion.html con los datos en la
+        // URL, pero eso se pierde apenas cambiamos de página. Por eso, antes de
+        // dejarlo seguir, guardamos una copia de esta solicitud en localStorage:
+        // así queda registrada y mi-cuenta.html la puede mostrar más adelante.
+        const nuevaSolicitud = {
+            nombre: document.querySelector("#nombre").value.trim(),
+            nombreMascota: document.querySelector("#nombre_mascota").value.trim(),
+            correo: document.querySelector("#correo").value.trim(),
+            telefono: document.querySelector("#telefono").value.trim(),
+            especie: document.querySelector("#especie").value,
+            servicio: document.querySelector("#servicio").value,
+            fecha: document.querySelector("#fecha").value,
+            estado: "Pendiente de confirmar",
+            fechaRegistro: new Date().toISOString(),
+        };
+
+        const guardadas = localStorage.getItem("solicitudesCitas");
+        const solicitudes = guardadas !== null ? JSON.parse(guardadas) : [];
+        solicitudes.push(nuevaSolicitud);
+        localStorage.setItem("solicitudesCitas", JSON.stringify(solicitudes));
+
+        // No se llama a evento.preventDefault() aquí: dejamos que el
+        // formulario siga su curso normal y navegue a confirmacion.html.
     });
 
     // Contador de caracteres del motivo (mejora de experiencia, sin
