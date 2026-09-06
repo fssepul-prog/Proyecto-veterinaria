@@ -31,7 +31,7 @@
     </header>
  
 
-        <div>
+       <div>
             <section class="encabezado-pagina" aria-labelledby="titulo-usuarios">
                 <p class="etiqueta">Rol administrador</p>
                 <h1 id="titulo-usuarios">Gestión de usuarios</h1>
@@ -130,22 +130,27 @@
                         <div class="campo">
                             <label for="nombre-usuario">Nombre completo</label>
                             <input type="text" id="nombre-usuario" name="nombre" data-campo="nombre"
-                                   minlength="3" autocomplete="name" required>
+                                   pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3"
+                                   autocomplete="name" required>
+                            <p class="ayuda-campo">Solo letras y espacios, sin números.</p>
                             <p class="error-campo" id="error-nombre" role="alert"></p>
                         </div>
  
                         <div class="campo">
                             <label for="correo-usuario">Correo electrónico</label>
                             <input type="email" id="correo-usuario" name="correo" data-campo="correo"
-                                   autocomplete="email" required>
+                                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                   placeholder="nombre@gmail.com" autocomplete="email" required>
+                            <p class="ayuda-campo">Debe tener el formato usuario@dominio.com.</p>
                             <p class="error-campo" id="error-correo" role="alert"></p>
                         </div>
  
                         <div class="campo">
                             <label for="telefono-usuario">Teléfono de contacto</label>
                             <input type="tel" id="telefono-usuario" name="telefono" data-campo="telefono"
-                                   pattern="[0-9]{9}" placeholder="912345678" autocomplete="tel" required>
-                            <p class="ayuda-campo">9 dígitos, sin espacios ni guiones.</p>
+                                   pattern="56[0-9]{9}" maxlength="11" inputmode="numeric"
+                                   placeholder="56912345678" autocomplete="tel" required>
+                            <p class="ayuda-campo">Debe comenzar con 56 y tener 9 dígitos después (11 en total).</p>
                             <p class="error-campo" id="error-telefono" role="alert"></p>
                         </div>
  

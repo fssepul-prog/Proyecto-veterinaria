@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmación de usuario creado, Veterinaria San Marcos.">
+    <title>Usuario creado | Panel de administrador</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <nav aria-label="Navegación principal">
+        <ul class="menu">
+            <li><a href="administrador.html">Panel de administrador</a></li>
+        </ul>
+    </nav>
+</header>
+ 
+<main id="contenido-principal">
+    <section class="encabezado-pagina" aria-labelledby="titulo-confirmacion">
+        <p class="etiqueta">Rol administrador</p>
+        <h1 id="titulo-confirmacion">Usuario creado correctamente</h1>
+        <p id="mensaje-sin-datos" hidden>
+            No encontramos datos de un usuario recién creado. Es posible que hayas llegado
+            directo a esta página sin completar el formulario.
+        </p>
+    </section>
+ 
+    <section id="seccion-resumen" aria-labelledby="titulo-resumen-usuario" hidden>
+        <h2 id="titulo-resumen-usuario">Resumen del usuario</h2>
+        <article class="tarjeta">
+            <p><strong>Nombre:</strong> <span id="resumen-nombre"></span></p>
+            <p><strong>Correo:</strong> <span id="resumen-correo"></span></p>
+            <p><strong>Teléfono:</strong> <span id="resumen-telefono"></span></p>
+            <p><strong>Rol:</strong> <span id="resumen-rol"></span></p>
+            <p><strong>Estado:</strong> <span id="resumen-estado"></span></p>
+        </article>
+    </section>
+ 
+    <section aria-labelledby="titulo-siguiente-paso">
+        <h2 id="titulo-siguiente-paso" class="visualmente-oculto">Qué hacer ahora</h2>
+        <div class="grupo-botones">
+            <a class="boton" href="administrador.html">Volver al inicio</a>
+            <a class="boton boton--secundario" href="admin-usuarios.html">Crear otro usuario</a>
+        </div>
+    </section>
+</main>
+ 
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="administrador.html">Panel de administrador</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin-detalle-usuario.js"></script>
+ 
+</body>
+</html>
