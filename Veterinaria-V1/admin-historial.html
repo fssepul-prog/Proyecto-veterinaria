@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de usuarios del sistema, Veterinaria San Marcos.">
+    <title>Usuarios | Panel de administrador</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+
+    <header class="cabecera-sitio">
+        <a class="marca" href="administrador.html">
+            <img src="assets/img/logo.png" alt="">
+            Veterinaria San Marcos
+        </a>
+        <nav aria-label="Navegación principal">
+            <ul class="menu">        
+                <li><a href="Administrador.html">Administrador</a></li>
+                <li><a href="admin-citas.html">Citas</a></li>
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="admin-servicios.html">Servicios</a></li>
+                <li><a href="admin-reportes.html">Reportes</a></li>
+                <li><a href="admin-historial.html" aria-current="page">Historial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+ 
+        <div>
+            <section class="encabezado-pagina" aria-labelledby="titulo-historial">
+                <p class="etiqueta">Rol administrador</p>
+                <h1 id="titulo-historial">Historial clínico de pacientes</h1>
+                <p>Consulta la ficha completa de cualquier paciente desde un solo lugar,
+                    sin depender de fichas de papel que se puedan perder o traspapelar.</p>
+            </section>
+ 
+            <section aria-labelledby="titulo-buscador">
+                <h2 id="titulo-buscador">Buscar paciente</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="buscar-paciente">Nombre de la mascota o dueño</label>
+                        <input type="search" id="buscar-paciente" placeholder="Ej: Toby, Javiera Contreras">
+                    </div>
+                </div>
+            </section>
+ 
+            <section aria-labelledby="titulo-tabla-pacientes">
+                <h2 id="titulo-tabla-pacientes">Pacientes registrados</h2>
+                <div class="tabla-contenedor">
+                    <table>
+                        <caption>Listado de pacientes</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col">Mascota</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Dueño</th>
+                            <th scope="col">Última atención</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Toby</td>
+                            <td>Perro</td>
+                            <td>Javiera Contreras</td>
+                            <td>04-09-2026</td>
+                            <td><button type="button" class="accion-fila">Ver ficha</button></td>
+                        </tr>
+                        <tr>
+                            <td>Michi</td>
+                            <td>Gato</td>
+                            <td>Rodrigo Neira</td>
+                            <td>05-09-2026</td>
+                            <td><button type="button" class="accion-fila">Ver ficha</button></td>
+                        </tr>
+                        <tr>
+                            <td>Copito</td>
+                            <td>Conejo</td>
+                            <td>Marcela Iturra</td>
+                            <td>06-09-2026</td>
+                            <td><button type="button" class="accion-fila">Ver ficha</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+ 
+            <section aria-labelledby="titulo-ficha">
+                <h2 id="titulo-ficha">Ficha clínica: Toby (perro)</h2>
+                <article class="tarjeta">
+                    <p><strong>Dueño:</strong> Javiera Contreras</p>
+                    <p><strong>Especie / raza:</strong> Perro, mestizo</p>
+                    <p><strong>Edad:</strong> 4 años</p>
+                    <h3>Diagnósticos recientes</h3>
+                    <ul>
+                        <li>04-09-2026 — Consulta general: sin observaciones.</li>
+                        <li>10-05-2026 — Dermatitis leve, tratada con antiinflamatorio.</li>
+                    </ul>
+                    <h3>Vacunas</h3>
+                    <ul>
+                        <li>Antirrábica — aplicada 12-03-2026, próxima 12-03-2027.</li>
+                        <li>Sextuple — aplicada 20-01-2026, próxima 20-01-2027.</li>
+                    </ul>
+                    <h3>Próximo control</h3>
+                    <p>15-12-2026 — Control de rutina.</p>
+                </article>
+            </section>
+        </div>
+    </div>
+</main>
+
+    
+
+    <footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="administrador.html">Panel de administrador</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/admin-usuarios.js"></script>
+ 
+</body>
