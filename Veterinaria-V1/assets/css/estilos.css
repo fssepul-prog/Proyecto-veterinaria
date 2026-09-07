@@ -492,6 +492,7 @@ figcaption {
 
 
 /* Cambios para la parte de administrador */
+
 .visualmente-oculto {
     position: absolute;
     width: 1px;
@@ -538,4 +539,8 @@ dialog.dialogo-admin {
 
 dialog.dialogo-admin::backdrop {
     background: rgba(0, 0, 0, 0.45);
+}
+
+.accion-fila:hover {
+    background: var(--color-acento);
 }

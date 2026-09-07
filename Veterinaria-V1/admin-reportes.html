@@ -39,27 +39,44 @@
             </section>
  
             <section aria-labelledby="titulo-resumen-reportes">
-                <h2 id="titulo-resumen-reportes">Resumen del mes</h2>
+                <h2 id="titulo-resumen-reportes">Resumen general</h2>
                 <div class="grilla-datos">
                     <article class="ficha-dato tarjeta-metrica">
-                        <strong>Atenciones totales</strong>
-                        <p>128</p>
+                        <strong>Usuarios totales</strong>
+                        <p id="dato-usuarios-totales">0</p>
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
-                        <strong>Citas pendientes</strong>
-                        <p>18</p>
+                        <strong>Usuarios activos</strong>
+                        <p id="dato-usuarios-activos">0</p>
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
-                        <strong>Citas canceladas</strong>
-                        <p>7</p>
+                        <strong>Servicios en catálogo</strong>
+                        <p id="dato-servicios-totales">0</p>
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
-                        <strong>Servicio más solicitado</strong>
-                        <p>Consulta general</p>
+                        <strong>Servicio más caro</strong>
+                        <p id="dato-servicio-mas-caro">Operacion: 180.000</p>
                     </article>
                 </div>
             </section>
- 
+
+            <section aria-labelledby="titulo-tabla-usuarios-rol">
+                <h2 id="titulo-tabla-usuarios-rol">Usuarios por rol</h2>
+                <div class="tabla-contenedor">
+                    <table>
+                        <caption>Distribución de usuarios según su rol</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cuerpo-usuarios-por-rol">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
             <section aria-labelledby="titulo-tabla-reportes">
                 <h2 id="titulo-tabla-reportes">Atenciones por servicio</h2>
                 <div class="tabla-contenedor">
@@ -125,6 +142,5 @@
 </footer>
 
 
-<script src="assets/js/admin-reportes.js"></script>
  
 </body>

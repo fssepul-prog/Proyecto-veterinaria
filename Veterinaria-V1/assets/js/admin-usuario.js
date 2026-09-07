@@ -1,5 +1,6 @@
 const CLAVE_USUARIOS = "vsm_usuarios";
 const CLAVE_ACTIVIDAD = "vsm_actividad";
+const cuerpoUsuarios = document.querySelector("#cuerpo-usuarios");
 
 
 function obtenerUsuarios() {
