@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crea una cuenta de dueño de mascota en Veterinaria San Marcos.">
+    <title>Registro | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- inicio del apartado de registro -->
+
+<main id="contenido-principal">
+    <header class="encabezado-pagina">
+        <p class="etiqueta">Crear cuenta</p>
+        <h1>Regístrate como dueño de mascota</h1>
+        <p>Esta cuenta es para dueños de mascota. Los roles de recepción y
+            administración se crean directamente por el equipo de la clínica.</p>
+    </header>
+
+    <!-- Este formulario solo guarda tus datos, no crea acceso real al
+         sistema: para ingresar sigue usando las cuentas de demostración
+         que aparecen en la página de ingreso. -->
+    <form class="formulario" id="formulario-registro" novalidate>
+        <fieldset>
+            <legend>Tus datos</legend>
+
+            <div class="campo">
+                <label for="nombre_registro">Nombre completo</label>
+                <input id="nombre_registro" name="nombre_registro" type="text"
+                       data-campo="nombre_registro" minlength="3"
+                       pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" autocomplete="name" required
+                       aria-describedby="ayuda-nombre_registro error-nombre_registro">
+                <p class="ayuda-campo" id="ayuda-nombre_registro">Solo letras y espacios, sin números.</p>
+                <p class="error-campo" id="error-nombre_registro" role="alert"></p>
+            </div>
+
+
+            <!-- "pattern" valida solo la FORMA del RUT (7-8 dígitos + dígito
+                verificador 0-9 o K), no si el dígito verificador es matemáticamente
+                correcto. "aria-describedby" conecta el input con la ayuda de
+                formato y con su mensaje de error para lectores de pantalla. -->
+            <div class="campo">
+                <label for="rut_registro">RUT</label>
+                <input id="rut_registro" name="rut_registro" type="text"
+                       data-campo="rut_registro" pattern="[0-9]{7,8}[0-9kK]"
+                       placeholder="12345678K" required
+                       aria-describedby="ayuda-rut_registro error-rut_registro">
+                <p class="ayuda-campo" id="ayuda-rut_registro">Sin puntos ni guion, ejemplo: 12345678K.</p>
+                <p class="error-campo" id="error-rut_registro" role="alert"></p>
+            </div>
+
+            <div class="campo">
+                <label for="correo_registro">Correo electrónico</label>
+                <input id="correo_registro" name="correo_registro" type="email"
+                       data-campo="correo_registro" autocomplete="email" required
+                       aria-describedby="error-correo_registro">
+                <p class="error-campo" id="error-correo_registro" role="alert"></p>
+            </div>
+
+            <div class="campo">
+                <label for="clave_registro">Contraseña</label>
+                <input id="clave_registro" name="clave_registro" type="password"
+                       data-campo="clave_registro" minlength="6" required
+                       aria-describedby="ayuda-clave_registro error-clave_registro">
+                <p class="ayuda-campo" id="ayuda-clave_registro">Mínimo 6 caracteres.</p>
+                <p class="error-campo" id="error-clave_registro" role="alert"></p>
+            </div>
+        </fieldset>
+
+        <button type="submit">Crear cuenta</button>
+        <p id="mensaje-registro" role="status"></p>
+    </form>
+
+    <p>¿Ya tienes cuenta? <a href="ingreso.html">Ingresa aquí</a>.</p>
+</main>
+
+<!-- termino del apartado de registro -->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/registro.js"></script>
+</body>
+</html>
