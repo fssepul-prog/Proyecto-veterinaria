@@ -3,6 +3,7 @@ const cuerpoMisCitas = document.querySelector("#cuerpo-mis-citas");
 const mensajeSinCitas = document.querySelector("#mensaje-sin-citas");
 
 if (cuerpoHistorial && cuerpoMisCitas) {
+
     // Historial clínico de ejemplo.(estos son valores que solo sirven como referencia para saber como seria el funcionamiento dentro de la  pagina web  )
     const historialClinico = [
         { fecha: "10-06-2026", motivo: "Control anual", diagnostico: "Sana, al día con vacunas" },
@@ -22,6 +23,8 @@ if (cuerpoHistorial && cuerpoMisCitas) {
 
     // Nombre fijo de demostración: como no hay login real, usamos este
     // nombre como si fuera "la sesión activa".
+    // Cliente Demo es unicamente para revisar el historial de agendamiento de cita sin registro de cuenta.
+
     const NOMBRE_CLIENTE_DEMO = "Cliente Demo";
 
     const guardadas = localStorage.getItem("solicitudesCitas");
