@@ -544,3 +544,79 @@ dialog.dialogo-admin::backdrop {
 .accion-fila:hover {
     background: var(--color-acento);
 }
+
+@media (min-width: 48rem) {
+
+
+    body.pagina-admin section {
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+
+    body.pagina-admin .menu a {
+        transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    body.pagina-admin .menu a:hover {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+
+    body.pagina-admin #formulario-usuario,
+    body.pagina-admin #formulario-servicio {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 2rem;
+        background: var(--color-superficie);
+        border-radius: var(--radio);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body.pagina-admin .formulario input,
+    body.pagina-admin .formulario select,
+    body.pagina-admin .formulario textarea {
+        padding: 0.75rem 1rem;
+    }
+
+    body.pagina-admin .formulario .grupo-botones {
+        justify-content: center;
+    }
+
+
+    body.pagina-admin #filtro-estado {
+        width: auto;
+        min-width: 12rem;
+    }
+
+
+    body.pagina-admin .tabla-contenedor table td,
+    body.pagina-admin .tabla-contenedor table th {
+        border-left: none;
+        border-right: none;
+    }
+
+    body.pagina-admin .tabla-contenedor table tbody tr:nth-child(even) {
+        background: var(--color-fondo);
+    }
+
+
+    body.pagina-admin .grilla-datos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    body.pagina-admin .ficha-dato {
+        text-align: center;
+    }
+
+
+    body.pagina-admin #buscar-paciente {
+        width: 100%;
+        max-width: 28rem;
+    }
+}
