@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gestión de usuarios del sistema, Veterinaria San Marcos.">
-    <title>Usuarios | Panel de administrador</title>
+    <meta name="description" content="Veterinaria San Marcos: clínica veterinaria en Rancagua. Agenda tu hora en línea.">
+    <title>Inicio | Veterinaria San Marcos</title>
     <link rel="icon" type="image/png" href="assets/img/logo.png">
     <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
+
 <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
- 
 
-    <header class="cabecera-sitio">
-        <a class="marca" href="administrador.html">
-            <img src="assets/img/logo.png" alt="">
-            Veterinaria San Marcos
-        </a>
-        <nav aria-label="Navegación principal">
-            <ul class="menu">        
-                <li><a href="administrador.html">Administrador</a></li>
-                <li><a href="admin-citas.html">Citas</a></li>
-                <li><a href="admin-usuarios.html">Usuarios</a></li>
-                <li><a href="admin-servicios.html">Servicios</a></li>
-                <li><a href="admin-reportes.html" aria-current="page">Reportes</a></li>
-                <li><a href="admin-historial.html">Historial</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="cabecera-sitio">
+    <a class="marca" href="administrador.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <!-- menu colapsable-->
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="administrador.html">Administrador</a></li>
+            <li><a href="admin-citas.html">Citas</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="admin-servicios.html">Servicios</a></li>
+            <li><a href="admin-reportes.html" aria-current="page" >Reportes</a></li>
+            <li><a href="admin-historial.html">Historial</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <body class="pagina-admin"></body>
+    <body class="pagina-admin"></body> 
 
+    <main id="contenido-principal">
         <div>
             <section class="encabezado-pagina" aria-labelledby="titulo-reportes">
                 <p class="etiqueta">Rol administrador</p>
@@ -44,7 +51,7 @@
                 <div class="grilla-datos">
                     <article class="ficha-dato tarjeta-metrica">
                         <strong>Usuarios totales</strong>
-                        <p id="dato-usuarios-totales">0</p>
+                        <p id="dato-usuarios-totales">10</p>
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
                         <strong>Usuarios activos</strong>
@@ -52,11 +59,11 @@
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
                         <strong>Servicios en catálogo</strong>
-                        <p id="dato-servicios-totales">0</p>
+                        <p id="dato-servicios-totales">3</p>
                     </article>
                     <article class="ficha-dato tarjeta-metrica">
                         <strong>Servicio más caro</strong>
-                        <p id="dato-servicio-mas-caro">Operacion 180.000</p>
+                        <p id="dato-servicio-mas-caro">Operacion 180.000$</p>
                     </article>
                 </div>
             </section>
@@ -109,7 +116,7 @@
     </div>
 </main>
 
-    <footer class="pie-sitio">
+<footer class="pie-sitio">
     <div class="pie-sitio__grid">
         <div>
             <p><strong>Veterinaria San Marcos</strong></p>
@@ -119,14 +126,13 @@
                 Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
             </address>
         </div>
-        <div>
-            <p><strong>Enlaces</strong></p>
-            <p><a href="administrador.html">Panel de administrador</a></p>
-        </div>
     </div>
     <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
 </footer>
-
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/admin.js"></script>
+<script src="assets/js/app.js"></script>
 
 
 </body>
+</html>

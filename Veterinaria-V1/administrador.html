@@ -18,8 +18,16 @@
         <img src="assets/img/logo.png" alt="">
         Veterinaria San Marcos
     </a>
+
+    <body class="pagina-admin"></body>  
+
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
     <nav aria-label="Navegación principal">
-        <ul class="menu">        
+        <ul class="menu" id="menu-principal">
             <li><a href="administrador.html" aria-current="page">Administrador</a></li>
             <li><a href="admin-citas.html">Citas</a></li>
             <li><a href="admin-usuarios.html">Usuarios</a></li>
@@ -29,26 +37,26 @@
         </ul>
     </nav>
 </header>
- 
 
-<body class="pagina-admin"></body>
+<!-- inicio de contenido de capa administrador-->
 
+<main id="contenido-principal">
 
 
     <section class="presentacion presentacion-admin" aria-labelledby="titulo-panel">
-    <div>
-        <p class="etiqueta">Rol administrador · Acceso total</p>
-        <h1 id="titulo-panel">Bienvenido/a administrador</h1>
-        <p>Este es tu panel donde administras el sistema.</p>
-        <div class="grupo-botones">
-            <a class="boton" href="admin-usuarios.html">Gestionar usuarios</a>
-            <a class="boton boton--secundario" href="admin-citas.html">Ver todas las citas</a>
+        <div>
+            <p class="etiqueta">Rol administrador · Acceso total</p>
+            <h1 id="titulo-panel">Bienvenido/a administrador</h1>
+            <p>Este es tu panel donde administras el sistema.</p>
+            <div class="grupo-botones">
+                <a class="boton" href="admin-usuarios.html">Gestionar usuarios</a>
+                <a class="boton boton--secundario" href="admin-citas.html">Ver todas las citas</a>
+            </div>
         </div>
-    </div>
-    <img src="assets/img/Pet_shop.jpg" alt="" aria-hidden="true" class="img-admin">
+        <img src="assets/img/Pet_shop.png" alt="" aria-hidden="true" class="img-admin">
     </section>
 
- 
+
 
     <section aria-labelledby="titulo-resumen">
         <h2 id="titulo-resumen">Resumen general</h2>
@@ -57,20 +65,19 @@
             <article class="ficha-dato">
                 <strong>Citas este mes</strong>
                 <p>128</p>
-
             </article>
 
-        <article class="ficha-dato">
-            <strong>Usuarios activos</strong>
-            <p id="dato-usuarios-activos">14</p>
-        </article>
-
+            <article class="ficha-dato">
+                <strong>Usuarios activos</strong>
+                <p id="dato-usuarios-activos">14</p>
             </article>
+
+            <!--</article>   este article esta sobrando-->
             <article class="ficha-dato">
                 <strong>Pacientes registrados</strong>
                 <p>342</p>
-
             </article>
+
             <article class="ficha-dato">
                 <strong>Servicio más solicitado</strong>
                 <p>Consulta general</p>
@@ -87,7 +94,7 @@
             </article>
         </div>
     </section>
- 
+
 
     <section aria-labelledby="titulo-actividad">
         <h2 id="titulo-actividad">Actividad reciente</h2>
@@ -118,14 +125,16 @@
                     <td>Reagendó la cita de Rocky (perro)</td>
                 </tr>
                 </tbody>
+
             </table>
         </div>
     </section>
- 
+
+
+</main>
 
 
 
- 
 <footer class="pie-sitio">
     <div class="pie-sitio__grid">
         <div>
@@ -136,16 +145,13 @@
                 Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
             </address>
         </div>
-        <div>
-            <p><strong>Enlaces</strong></p>
-            <p><a href="agenda.html">Horario de atención</a></p>
-            <p><a href="citas.html">Solicitar una hora</a></p>
-        </div>
     </div>
     <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
 </footer>
+<script src="assets/js/menu.js"></script>
 <script src="assets/js/admin.js"></script>
+<script src="assets/js/app.js"></script>
+
 
 </body>
 </html>
-
