@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veterinaria San Marcos: clínica veterinaria en Rancagua. Agenda tu hora en línea.">
+    <title>Inicio | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+
+<header class="cabecera-sitio">
+    <a class="marca" href="administrador.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+
+    <body class="pagina-admin"></body>  
+
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="administrador.html" aria-current="page">Administrador</a></li>
+            <li><a href="admin-citas.html">Citas</a></li>
+            <li><a href="admin-usuarios.html">Usuarios</a></li>
+            <li><a href="admin-servicios.html">Servicios</a></li>
+            <li><a href="admin-reportes.html">Reportes</a></li>
+            <li><a href="admin-historial.html">Historial</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- inicio de contenido de capa administrador-->
+
+<main id="contenido-principal">
+
+
+    <section class="presentacion presentacion-admin" aria-labelledby="titulo-panel">
+        <div>
+            <p class="etiqueta">Rol administrador · Acceso total</p>
+            <h1 id="titulo-panel">Bienvenido/a administrador</h1>
+            <p>Este es tu panel donde administras el sistema.</p>
+            <div class="grupo-botones">
+                <a class="boton" href="admin-usuarios.html">Gestionar usuarios</a>
+                <a class="boton boton--secundario" href="admin-citas.html">Ver todas las citas</a>
+            </div>
+        </div>
+        <img src="assets/img/Pet_shop.png" alt="" aria-hidden="true" class="img-admin">
+    </section>
+
+
+
+    <section aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen">Resumen general</h2>
+        <div class="grilla-datos">
+
+            <article class="ficha-dato">
+                <strong>Citas este mes</strong>
+                <p>128</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Usuarios activos</strong>
+                <p id="dato-usuarios-activos">14</p>
+            </article>
+
+            <!--</article>   este article esta sobrando-->
+            <article class="ficha-dato">
+                <strong>Pacientes registrados</strong>
+                <p>342</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Servicio más solicitado</strong>
+                <p>Consulta general</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Ingresos estimados</strong>
+                <p>$1.450.000</p>
+            </article>
+
+            <article class="ficha-dato">
+                <strong>Atenciones hoy</strong>
+                <p>8</p>
+            </article>
+        </div>
+    </section>
+
+
+    <section aria-labelledby="titulo-actividad">
+        <h2 id="titulo-actividad">Actividad reciente</h2>
+        <div class="tabla-contenedor">
+            <table>
+                <caption>Últimos movimientos en el sistema</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>02-09-2026</td>
+                    <td>Pedro Salgado</td>
+                    <td>Confirmó la cita de Javiera Contreras</td>
+                </tr>
+                <tr>
+                    <td>01-09-2026</td>
+                    <td>Marcela Iturra</td>
+                    <td>Creó el usuario Rodrigo Neira</td>
+                </tr>
+                <tr>
+                    <td>31-08-2026</td>
+                    <td>Pedro Salgado</td>
+                    <td>Reagendó la cita de Rocky (perro)</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </section>
+
+
+</main>
+
+
+
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/admin.js"></script>
+<script src="assets/js/app.js"></script>
+
+
+</body>
+</html>
