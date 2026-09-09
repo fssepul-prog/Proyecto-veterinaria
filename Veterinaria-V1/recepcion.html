@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de recepción, Veterinaria San Marcos.">
+    <title>Recepción | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+
+    <!-- Menu exclusivo para el apartado de recepcion.
+    Este se abstrae de las opciones que estan orientadas para el usuario final. -->
+
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="recepcion.html" aria-current="page">Panel de recepción</a></li>
+            <li><a href="ingreso.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- inicio de la estructura de CAPA DE RECEPCION -->
+
+<main id="contenido-principal">
+    <header class="encabezado-pagina">
+        <p class="etiqueta">Rol recepcionista / operador</p>
+        <h1>Panel de recepción</h1>
+        <p>Revisa las citas solicitadas por los dueños y registra las
+            atenciones en el historial clínico.</p>
+    </header>
+
+    <section aria-labelledby="titulo-citas-pendientes">
+        <h2 id="titulo-citas-pendientes">Citas solicitadas</h2>
+        <p id="mensaje-estado-citas" class="aviso" role="status" hidden></p>
+        <div class="tabla-contenedor">
+            <table id="tabla-citas">
+                <caption>Todas las solicitudes de hora</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Dueño</th>
+                    <th scope="col">Mascota</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpo-citas">
+                <!-- Se completa desde recepcion.js -->
+                </tbody>
+            </table>
+        </div>
+        <p id="mensaje-sin-citas" hidden>Aún no hay citas solicitadas.</p>
+    </section>
+
+    <section aria-labelledby="titulo-fichas">
+        <h2 id="titulo-fichas">Fichas de pacientes</h2>
+
+        <!--<p>Cada ficha queda asociada al nombre del dueño: por eso también
+            aparece en su historial clínico, dentro de "Mi cuenta".</p> -->
+
+        <div class="tabla-contenedor">
+            <table id="tabla-fichas">
+                <caption>Fichas registradas</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Dueño</th>
+                    <th scope="col">Mascota</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Diagnóstico</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpo-fichas">
+
+                <!-- Se completa desde recepcion.js -->
+                </tbody>
+            </table>
+        </div>
+        <p id="mensaje-sin-fichas" hidden>Aún no hay fichas registradas.</p>
+    </section>
+
+    <section aria-labelledby="titulo-registrar-atencion">
+        <h2 id="titulo-registrar-atencion">Registrar o editar una ficha</h2>
+        <p>Al guardar una ficha, se agrega (o actualiza) el historial
+            clínico del dueño correspondiente (visible en su "Mi cuenta").</p>
+
+        <form class="formulario" id="formulario-historial" novalidate>
+            <input type="hidden" id="ficha-indice-editar" value="">
+            <fieldset>
+                <legend>Datos de la atención</legend>
+
+                <div class="campo">
+                    <label for="historial-dueno">Nombre del dueño</label>
+                    <input id="historial-dueno" name="historial-dueno" type="text"
+                           data-campo="historial-dueno" minlength="3"
+                           pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" required
+                           aria-describedby="error-historial-dueno">
+                    <p class="error-campo" id="error-historial-dueno" role="alert"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="historial-mascota">Nombre de la mascota</label>
+                    <input id="historial-mascota" name="historial-mascota" type="text"
+                           data-campo="historial-mascota" minlength="2"
+                           pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]+" required
+                           aria-describedby="error-historial-mascota">
+                    <p class="error-campo" id="error-historial-mascota" role="alert"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="historial-fecha">Fecha de la atención</label>
+                    <input id="historial-fecha" name="historial-fecha" type="date"
+                           data-campo="historial-fecha" required
+                           aria-describedby="error-historial-fecha">
+                    <p class="error-campo" id="error-historial-fecha" role="alert"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="historial-motivo">Motivo de la consulta</label>
+                    <input id="historial-motivo" name="historial-motivo" type="text"
+                           data-campo="historial-motivo" minlength="3" required
+                           aria-describedby="error-historial-motivo">
+                    <p class="error-campo" id="error-historial-motivo" role="alert"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="historial-diagnostico">Diagnóstico / observaciones</label>
+                    <textarea id="historial-diagnostico" name="historial-diagnostico" rows="3"
+                              data-campo="historial-diagnostico" minlength="5" required
+                              aria-describedby="error-historial-diagnostico"></textarea>
+                    <p class="error-campo" id="error-historial-diagnostico" role="alert"></p>
+                </div>
+            </fieldset>
+
+            <div class="grupo-botones">
+                <button type="submit" id="boton-guardar-ficha">Guardar en el historial</button>
+                <button type="button" id="boton-cancelar-edicion-ficha" class="boton boton--secundario" hidden>Cancelar edición</button>
+            </div>
+            <p id="mensaje-historial" role="status"></p>
+        </form>
+    </section>
+</main>
+
+<!-- Diálogo para reagendar una cita: se abre desde el botón "Reagendar"
+     de la tabla de citas y solo pide la nueva fecha. -->
+<dialog id="dialogo-reagendar" aria-labelledby="titulo-dialogo-reagendar">
+    <form class="formulario" id="formulario-reagendar" novalidate>
+        <h2 id="titulo-dialogo-reagendar">Reagendar cita</h2>
+        <input type="hidden" id="reagendar-indice" value="">
+
+        <!-- type="date" hace que el navegador dibuje su propio calendario nativo
+             al hacer clic (distinto según Chrome/Firefox/etc). Nosotros no lo
+             construimos: solo leemos o escribimos la fecha elegida con .value. -->
+
+        <div class="campo">
+            <label for="reagendar-fecha">Nueva fecha</label>
+            <input type="date" id="reagendar-fecha" name="reagendar-fecha"
+                   data-campo="reagendar-fecha" required
+                   aria-describedby="error-reagendar-fecha">
+            <p class="error-campo" id="error-reagendar-fecha" role="alert"></p>
+        </div>
+
+        <div class="grupo-botones">
+            <button type="submit">Guardar nueva fecha</button>
+            <button type="button" id="boton-cancelar-reagendar" class="boton boton--secundario">Cancelar</button>
+        </div>
+    </form>
+</dialog>
+
+
+
+<!-- termino de la estructura de CAPA DE RECEPCION -->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/recepcion.js"></script>
+</body>
+</html>

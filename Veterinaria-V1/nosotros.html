@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veterinaria San Marcos: clínica veterinaria en Rancagua. Agenda tu hora en línea.">
+    <title>Inicio | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Comienzo de la estructura de nosotros-->
+
+<main id="contenido-principal">
+    <header class="encabezado-pagina">
+        <p class="etiqueta">¿Quiénes somos?</p>
+        <h1>Una clínica de barrio con más de 15 años de trayectoria</h1>
+        <p>Fundada en 2009, Veterinaria San Marcos atiende a las familias y sus
+            mascotas de Rancagua con cercanía y responsabilidad profesional.</p>
+    </header>
+
+    <section aria-labelledby="titulo-historia">
+        <h2 id="titulo-historia">Nuestra historia</h2>
+        <p>Comenzamos como una consulta pequeña y hoy atendemos en promedio 25
+            pacientes por día. El aumento sostenido de atenciones en los últimos
+            dos años nos impulsa a digitalizar procesos que antes dependían por
+            completo del papel, como la agenda de citas y las fichas clínicas.</p>
+    </section>
+
+    <!-- bloque dividido para textos e imagenes-->
+    <section aria-labelledby="titulo-equipo">
+        <h2 id="titulo-equipo">Nuestro equipo</h2>
+        <div class="grilla-tarjetas">
+            <!-- img izquierda-->
+            <article class="tarjeta">
+                <img src="assets/img/equipo-clinico.jpg"
+                     alt="Equipo clínico de Veterinaria San Marcos junto a un perro y un gato en atención">
+                <h3>Nuestro equipo profesional esta conformado por:</h3>
+                <ul>
+                    <li>3 médicos veterinarios</li>
+                    <li>1 técnico veterinario</li>
+                    <li>1 recepcionista administrativa</li>
+                </ul>
+            </article>
+
+
+            <!-- img central-->
+            <article class="tarjeta">
+                <img src="assets/img/animales.png"
+                     alt="mascotas">
+                <h3>Especies que atendemos</h3>
+                <p>Principalmente perros y gatos, además de conejos y aves. Cada ficha clínica se adapta a las necesidades propias de la especie.</p>
+            </article>
+
+
+            <!-- img derecha-->
+            <article class="tarjeta">
+                <img src="assets/img/compromiso.png">
+                <h3>Nuestro compromiso</h3>
+                <p>Que cada dueño o dueña pueda revisar el historial de su mascota,
+                    recibir aviso antes del vencimiento de una vacuna y pedir horas
+                    sin depender únicamente del teléfono.</p>
+            </article>
+        </div>
+    </section>
+
+    <section aria-labelledby="titulo-principios">
+        <h2 id="titulo-principios">Principios de atención</h2>
+
+        <ul class="lista-pasos">
+            <li>Trato cercano y explicaciones claras para personas sin experiencia
+                previa en salud animal.</li>
+            <li>Registro digital del historial clínico, disponible para el equipo
+                médico desde cualquier dispositivo con internet.</li>
+            <li>Privacidad de los datos: cada dueño o dueña solo puede ver la
+                información de sus propias mascotas.</li>
+        </ul>
+    </section>
+
+    <section aria-labelledby="titulo-como-participar">
+        <h2 id="titulo-como-participar">Cómo agendar tu primera hora</h2>
+        <ol class="lista-pasos">
+            <li>Revisa el <a href="servicios.html">catálogo de servicios</a> y
+                elige la atención que necesita tu mascota.</li>
+            <li>Consulta la <a href="agenda.html">agenda semanal</a> para conocer
+                los horarios disponibles.</li>
+            <li>Completa el <a href="citas.html">formulario de solicitud de
+                hora</a> con los datos de contacto y de tu mascota.</li>
+        </ol>
+    </section>
+</main>
+
+
+<!-- Termino  de la estructura de nosotros-->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+            <p><a href="ingreso.html">Acceso interno (equipo)</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmación de la solicitud de hora enviada a Veterinaria San Marcos.">
+    <title>Solicitud recibida | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="contenido-principal">
+    <!-- Comienzo de la estructura de confirmacion de agendar cita-->
+    <!-- este apartado solamente confirmaria el envio de la solicitud por parte del usuario hacia el agente receptor a modo de maqueta, aun no esta implementado-->
+    <section class="mensaje-confirmacion">
+        <p class="etiqueta">Solicitud recibida</p>
+        <h1>Gracias, <span id="nombre-confirmacion">visitante</span></h1>
+        <p id="resumen-confirmacion">
+            Registramos tu solicitud para <strong id="mascota-confirmacion">tu mascota</strong>.
+        </p>
+
+        <p> Esto es solamente una prueba.</p>
+
+        <div class="grupo-botones">
+            <a class="boton" href="agenda.html">Volver a la agenda</a>
+            <a class="boton boton--secundario" href="index.html">Ir al inicio</a>
+        </div>
+    </section>
+</main>
+    <!-- termino de la estructura de confirmacion de agendar cita-->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+            <p><a href="ingreso.html">Acceso interno (equipo)</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/confirmacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veterinaria San Marcos: clínica veterinaria en Rancagua. Agenda tu hora en línea.">
+    <title>Inicio | Veterinaria San Marcos</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+<header class="cabecera-sitio">
+    <a class="marca" href="index.html">
+        <img src="assets/img/logo.png" alt="">
+        Veterinaria San Marcos
+    </a>
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
+    <nav aria-label="Navegación principal">
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="citas.html">Solicitar hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Comienzo de la estructura de agenda-info-->
+<main id="contenido-principal">
+    <header class="encabezado-pagina encabezado-pagina--con-imagen">
+        <div>
+            <p class="etiqueta">Horario de atención</p>
+            <h1>Agenda semanal</h1>
+            <p>Consulta los bloques disponibles antes de solicitar tu hora. Los
+                horarios pueden variar en fechas con alta demanda, como campañas de
+                vacunación.</p>
+        </div>
+        <img src="assets/img/agenda-citas.jpg"
+             alt="Ícono de agendar hora en línea para tu mascota">
+    </header>
+
+    <section aria-labelledby="titulo-horario">
+        <h2 id="titulo-horario">Horario general</h2>
+        <div class="tabla-contenedor" tabindex="0"
+             aria-label="Agenda semanal desplazable horizontalmente">
+            <table>
+                <caption>Bloques de atención de lunes a sábado</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Día</th>
+                    <th scope="col">Turno mañana</th>
+                    <th scope="col">Turno tarde</th>
+                    <th scope="col">Atiende</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Lunes</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td><time datetime="15:00">15:00</time>–<time datetime="19:00">19:00</time></td>
+                    <td>Consultas y vacunación</td>
+                </tr>
+                <tr>
+                    <th scope="row">Martes</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td><time datetime="15:00">15:00</time>–<time datetime="19:00">19:00</time></td>
+                    <td>Consultas y exámenes</td>
+                </tr>
+                <tr>
+                    <th scope="row">Miércoles</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td>Cirugía programada</td>
+                    <td>Solo con hora confirmada</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jueves</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td><time datetime="15:00">15:00</time>–<time datetime="19:00">19:00</time></td>
+                    <td>Consultas y vacunación</td>
+                </tr>
+                <tr>
+                    <th scope="row">Viernes</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td><time datetime="15:00">15:00</time>–<time datetime="18:00">18:00</time></td>
+                    <td>Consultas y desparasitación</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sábado</th>
+                    <td><time datetime="09:00">09:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td>No hay atención</td>
+                    <td>Solo urgencias</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="titulo-campanas">
+        <h2 id="titulo-campanas">Próximas campañas de vacunación</h2>
+        <div class="tabla-contenedor" tabindex="0"
+             aria-label="Campañas próximas desplazables horizontalmente">
+            <table>
+                <caption>Fechas especiales de vacunación</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Actividad</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Horario</th>
+                    <th scope="col">Cupos</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Campaña antirrábica canina</th>
+                    <td><time datetime="2026-09-05">5 de septiembre</time></td>
+                    <td><time datetime="10:00">10:00</time>–<time datetime="13:00">13:00</time></td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">Jornada de control de peso</th>
+                    <td><time datetime="2026-09-12">12 de septiembre</time></td>
+                    <td><time datetime="15:00">15:00</time>–<time datetime="18:00">18:00</time></td>
+                    <td>15</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <aside class="aviso" aria-labelledby="titulo-aviso-agenda">
+        <h2 id="titulo-aviso-agenda">¿Encontraste un horario disponible?</h2>
+        <p>Completa el <a href="citas.html">formulario de solicitud de
+            hora</a> indicando el día y turno que prefieres. Nuestro equipo
+            confirmará la disponibilidad.</p>
+    </aside>
+</main>
+
+<!-- Termino  de la estructura de agenda-info-->
+<footer class="pie-sitio">
+    <div class="pie-sitio__grid">
+        <div>
+            <p><strong>Veterinaria San Marcos</strong></p>
+            <address>
+                Rancagua, Región del Libertador General Bernardo O'Higgins<br>
+                Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a><br>
+                Correo: <a href="mailto:contacto@veterinariasanmarcos.cl">contacto@veterinariasanmarcos.cl</a>
+            </address>
+        </div>
+        <div>
+            <p><strong>Enlaces</strong></p>
+            <p><a href="agenda.html">Horario de atención</a></p>
+            <p><a href="citas.html">Solicitar una hora</a></p>
+            <p><a href="ingreso.html">Acceso interno (equipo)</a></p>
+        </div>
+    </div>
+    <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos.</small></p>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>

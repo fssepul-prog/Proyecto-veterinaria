@@ -76,15 +76,55 @@ section + section {
     margin-bottom: 2rem;
 }
 
-/* 4. Navegación --------------------------------------------------- */
+.encabezado-pagina--con-imagen img {
+    width: 10rem;
+    margin: 1.5rem auto 0;
+}
+
+/* 4. Navegación ----
+flex-wrap: wrap en vez de flex-direction: column es la diferencia clave: en vez de apilar t0do
+en una columna, pone el logo y el botón en una misma fila, y cuando el nav (flex-basis: 100%) no cabe al lado,
+salta a la línea de abajo eso es lo que da el efecto de "logo+botón arriba, menú abajo" en vez de tod0 apilado -- */
+
+
+
 .cabecera-sitio {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     padding: 1rem 5%;
     color: #ffffff;
     background: var(--color-primario-oscuro);
 }
+
+
+
+
+.cabecera-sitio nav {
+    flex-basis: 100%;
+}
+
+
+.boton-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    color: #ffffff;
+    background: transparent;
+    border: 0.1rem solid #ffffff;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+
 
 .marca {
     display: flex;
@@ -103,12 +143,16 @@ section + section {
 }
 
 .menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.menu.menu-abierto {
+    display: flex;
 }
 
 .menu a {
@@ -427,12 +471,32 @@ figcaption {
 /* Desde 48rem (~768px): tablet y escritorio pequeño */
 @media (min-width: 48rem) {
     .cabecera-sitio {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .cabecera-sitio nav {
+        flex-basis: auto;
+    }
+
+    .boton-menu {
+        display: none;
+    }
+
+    .encabezado-pagina--con-imagen {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .encabezado-pagina--con-imagen img {
+        width: 9rem;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .menu {
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }

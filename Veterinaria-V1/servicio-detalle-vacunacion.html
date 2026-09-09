@@ -16,9 +16,15 @@
         <img src="assets/img/logo.png" alt="">
         Veterinaria San Marcos
     </a>
+
+    <button id="boton-menu" class="boton-menu" type="button"
+            aria-label="Abrir o cerrar menú principal"
+            aria-controls="menu-principal" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+    </button>
     <nav aria-label="Navegación principal">
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
+        <ul class="menu" id="menu-principal">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="agenda.html">Agenda</a></li>
@@ -91,7 +97,7 @@
                     <td>Bordetella canina</td>
                     <td>Perro</td>
                     <td>$14.000</td>
-                    <td>Tos de las perreras</td>
+                    <td>Enfermedad respiratoria</td>
                 </tr>
                 </tbody>
             </table>
@@ -122,10 +128,12 @@
             <p><strong>Enlaces</strong></p>
             <p><a href="agenda.html">Horario de atención</a></p>
             <p><a href="citas.html">Solicitar una hora</a></p>
+            <p><a href="ingreso.html">Acceso interno (equipo)</a></p>
         </div>
     </div>
     <p><small>© <span id="anio-actual">2026</span> Veterinaria San Marcos</small></p>
 </footer>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/menu.js"></script>
 </body>
 </html>

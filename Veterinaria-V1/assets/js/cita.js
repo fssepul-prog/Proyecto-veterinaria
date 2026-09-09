@@ -1,16 +1,20 @@
 //formulario para agendar citas
-
-
 const formularioCitas = document.querySelector("#formulario-citas");
 
 if (formularioCitas) {
     const campos = formularioCitas.querySelectorAll("[data-campo]");
-
     // mensajes personalizados por campo y por tipo de error.
     const mensajes = {
+
         nombre: {
             valueMissing: "Ingresa el nombre del dueño o dueña.",
             tooShort: "El nombre debe tener al menos 3 caracteres.",
+            patternMismatch: "Solo se permiten letras y espacios, sin números ni símbolos.",
+        },
+        nombre_mascota: {
+            valueMissing: "Ingresa el nombre de tu mascota.",
+            tooShort: "El nombre debe tener al menos 2 caracteres.",
+            patternMismatch: "Solo se permiten letras y espacios, sin números ni símbolos.",
         },
         correo: {
             valueMissing: "Ingresa un correo de contacto.",
@@ -40,7 +44,6 @@ if (formularioCitas) {
             valueMissing: "Debes confirmar que los datos ingresados son de prueba.",
         },
     };
-
 
     function mensajePersonalizado(campo) {
         const nombreCampo = campo.dataset.campo;
@@ -90,9 +93,28 @@ if (formularioCitas) {
     }
 
     campos.forEach((campo) => {
-        // Revalida mientras la persona corrige, sin esperar a un nuevo envío.
-        campo.addEventListener("input", () => marcarEstado(campo));
+
+        // blur: la persona terminó de escribir en el campo (perdió el foco).
+        // Ahí se ejecuta la validación completa, igual que al enviar.
+        campo.addEventListener("blur", () => marcarEstado(campo));
+
+        // input: la persona está escribiendo. Solo se limpia el error
+        // anterior, para no "castigarla" mientras todavía está corrigiendo.
+        campo.addEventListener("input", () => {
+            const contenedor = campo.closest(".campo");
+            const elementoError = document.querySelector("#error-" + campo.dataset.campo);
+            if (contenedor) {
+                contenedor.classList.remove("campo--invalido");
+            }
+            if (elementoError) {
+                elementoError.textContent = "";
+            }
+        });
+
+        // change: para select, radio, checkbox y fecha, donde no aplica
+        // "escribir letra por letra" — el valor cambia de una vez.
         campo.addEventListener("change", () => marcarEstado(campo));
+
         campo.addEventListener("invalid", (evento) => {
             evento.preventDefault();
             marcarEstado(campo);
@@ -126,19 +148,38 @@ if (formularioCitas) {
             if (primerCampoInvalido) {
                 primerCampoInvalido.focus();
             }
+            return;
         }
-        // Si el formulario es válido, se envía de forma normal (method="get")
-        // hacia confirmacion.html.
+
+        // El formulario va a llevar igual a confirmacion.html con los datos en la
+        // URL, pero eso se pierde apenas cambiamos de página. Por eso, antes de
+        // dejarlo seguir, guardamos una copia de esta solicitud en localStorage:
+        // así queda registrada y mi-cuenta.html la puede mostrar más adelante.
+        const nuevaSolicitud = {
+            nombre: document.querySelector("#nombre").value.trim(),
+            nombreMascota: document.querySelector("#nombre_mascota").value.trim(),
+            correo: document.querySelector("#correo").value.trim(),
+            telefono: document.querySelector("#telefono").value.trim(),
+            especie: document.querySelector("#especie").value,
+            servicio: document.querySelector("#servicio").value,
+            fecha: document.querySelector("#fecha").value,
+            estado: "Pendiente de confirmar",
+            fechaRegistro: new Date().toISOString(),
+        };
+
+        const guardadas = localStorage.getItem("solicitudesCitas");
+        const solicitudes = guardadas !== null ? JSON.parse(guardadas) : [];
+        solicitudes.push(nuevaSolicitud);
+        localStorage.setItem("solicitudesCitas", JSON.stringify(solicitudes));
+
+        // No se llama a evento.preventDefault() aquí: dejamos que el
+        // formulario siga su curso normal y navegue a confirmacion.html.
     });
-
-
-
 
     // Contador de caracteres del motivo (mejora de experiencia, sin
     // reemplazar la validación de minlength/maxlength ya declarada en HTML).
     const motivo = document.querySelector("#motivo");
     const contadorMotivo = document.querySelector("#contador-motivo");
-
 
     if (motivo && contadorMotivo) {
         const maximo = Number(motivo.getAttribute("maxlength"));
