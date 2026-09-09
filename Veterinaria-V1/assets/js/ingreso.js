@@ -6,7 +6,7 @@ if (formularioIngreso) {
     // por medio de las diversas capas de usuario que presenta la pagina web.
 
     const usuariosDemo = {
-        admin: { clave: "admin123", destino: "administracion.html" },
+        admin: { clave: "admin123", destino: "administrador.html" }, // la pagina pasa a ser administrador.html
         recepcion: { clave: "recepcion123", destino: "recepcion.html" },
         cliente: { clave: "cliente123", destino: "mi-cuenta.html" },
     };
